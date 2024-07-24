@@ -1,6 +1,6 @@
 const https = require('https');
 
-const pingUrl = 'https://example.com'; // Replace with the URL you want to ping
+const pingUrl = 'https://hisaul.com'; // Replace with the URL you want to ping
 
 function pingWebsite() {
   https.get(pingUrl, (res) => {
