@@ -1,4 +1,5 @@
 const https = require('https');
+const http = require('http');
 const cron = require('node-cron');
 
 const pingUrl = 'https://hisaul.com'; // Replace with the URL you want to ping
@@ -17,5 +18,13 @@ cron.schedule('*/5 * * * *', () => {
   pingWebsite();
 });
 
-// Keep the process running
-setInterval(() => {}, 1 << 30);
+// Create an HTTP server that listens on a random port
+const PORT = process.env.PORT || 3000; // Render will set the PORT environment variable
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Server is running\n');
+});
+
+server.listen(PORT, () => {
+  console.log(`Server running at port ${PORT}`);
+});
