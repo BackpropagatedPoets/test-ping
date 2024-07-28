@@ -5,5 +5,8 @@
   "main": "ping.js",
   "scripts": {
     "start": "node ping.js"
+  },
+  "dependencies": {
+    "node-cron": "^3.0.0"
   }
 }
